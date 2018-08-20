@@ -24,4 +24,4 @@ def test(path_dist, path_alpha):
     print(min_dist, max_dist)
 
 
-test("VrayZdepthCalculator_RGB.exr", "VrayZdepthCalculator_A.exr")
+# test("assets/VrayZdepthCalculator_RGB.exr", "assets/VrayZdepthCalculator_A.exr")

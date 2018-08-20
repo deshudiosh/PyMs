@@ -1,1 +1,1 @@
-pyinstaller pyms.spec --onefile --clean --distpath="."
+pyinstaller pyms_debug.spec --onefile --clean

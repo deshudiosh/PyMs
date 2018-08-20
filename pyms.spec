@@ -1,7 +1,7 @@
 # -*- mode: python -*-
 
-block_cipher = None
-
+import PyInstaller.config
+PyInstaller.config.CONF['distpath'] = "."
 
 a = Analysis(['pyms.py'],
              pathex=[],
@@ -13,9 +13,9 @@ a = Analysis(['pyms.py'],
              excludes=[],
              win_no_prefer_redirects=False,
              win_private_assemblies=False,
-             cipher=block_cipher)
+             cipher=None)
 pyz = PYZ(a.pure, a.zipped_data,
-             cipher=block_cipher)
+             cipher=None)
 exe = EXE(pyz,
           a.scripts,
           a.binaries,

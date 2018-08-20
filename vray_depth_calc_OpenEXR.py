@@ -1,5 +1,9 @@
 import OpenEXR
 
+import array
+
+import math
+
 
 def exr_with_alpha(path: str):
     exr = OpenEXR.InputFile(path)
@@ -33,3 +37,5 @@ def exr_without_alpha(path: str):
         min_dist = dist_val if dist_val < min_dist else min_dist
 
     print(min_dist, max_dist)
+
+
