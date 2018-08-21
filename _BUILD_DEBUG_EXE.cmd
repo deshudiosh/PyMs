@@ -1,8 +1,7 @@
 call "./venv/Scripts/activate"
-pyinstaller ^
-	--onefile ^
+pyinstaller pyms_debug.spec ^
+	--onedir ^
 	--log-level INFO ^
 	--clean ^
-	--debug ^
-	pyms_debug.spec
+	--debug
 pause
