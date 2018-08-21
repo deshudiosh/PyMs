@@ -24,4 +24,4 @@ def test(path_dist, path_alpha):
     print(min_dist, max_dist)
 
 
-# test("assets/VrayZdepthCalculator_RGB.exr", "assets/VrayZdepthCalculator_A.exr")
+# test.py("assets/VrayZdepthCalculator_RGB.exr", "assets/VrayZdepthCalculator_A.exr")

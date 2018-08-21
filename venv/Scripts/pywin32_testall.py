@@ -1,4 +1,4 @@
-"""A test runner for pywin32"""
+"""A test.py runner for pywin32"""
 import sys
 import os
 import distutils.sysconfig
@@ -36,7 +36,7 @@ if hasattr(os, 'popen3'):
             os.chdir(cwd)
 else:
     # a subprocess version - but we prefer the popen one if we can as we can
-    # see test results as they are run (whereas this one waits until the test
+    # see test.py results as they are run (whereas this one waits until the test.py
     # is finished...)
     import subprocess
     def run_test(script, cmdline_rest=""):
@@ -58,19 +58,19 @@ def find_and_run(possible_locations, script, cmdline_rest=""):
             run_test(os.path.abspath(os.path.join(maybe, script)), cmdline_rest)
             break
     else:
-        raise RuntimeError("Failed to locate the test script '%s' in one of %s"
+        raise RuntimeError("Failed to locate the test.py script '%s' in one of %s"
                            % (script, possible_locations))
 
 if __name__=='__main__':
     # win32
-    maybes = [os.path.join(this_dir, "win32", "test"),
-              os.path.join(site_packages, "win32", "test"),
+    maybes = [os.path.join(this_dir, "win32", "test.py"),
+              os.path.join(site_packages, "win32", "test.py"),
              ]
     find_and_run(maybes, 'testall.py')
 
     # win32com
-    maybes = [os.path.join(this_dir, "com", "win32com", "test"),
-              os.path.join(site_packages, "win32com", "test"),
+    maybes = [os.path.join(this_dir, "com", "win32com", "test.py"),
+              os.path.join(site_packages, "win32com", "test.py"),
              ]
     find_and_run(maybes, 'testall.py', "2")
 
@@ -80,7 +80,7 @@ if __name__=='__main__':
              ]
     find_and_run(maybes, 'adodbapitest.py')
     # This script has a hard-coded sql server name in it, (and markh typically
-    # doesn't have a different server to test on) so don't bother trying to
+    # doesn't have a different server to test.py on) so don't bother trying to
     # run it...
     # find_and_run(maybes, 'test_adodbapi_dbapi20.py')
 

@@ -3,7 +3,7 @@
 import PyInstaller.config
 PyInstaller.config.CONF['distpath'] = "."
 
-a = Analysis(['pyms.py'],
+a = Analysis(['src/pyms.py'],
              pathex=[],
              binaries=[],
              datas=[],

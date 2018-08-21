@@ -3,8 +3,9 @@
 import PyInstaller.config
 PyInstaller.config.CONF['distpath'] = "."
 
-options = [('v', None, 'OPTION')]
-a = Analysis(['pyms.py'],
+# options = [ ('v', None, 'OPTION'), ('W ignore', None, 'OPTION') ]
+
+a = Analysis(['src/pyms.py'],
              pathex=[],
              binaries=[],
              datas=[],
