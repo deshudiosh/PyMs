@@ -1,1 +1,0 @@
-pyinstaller pyms_debug.spec --onefile --clean
