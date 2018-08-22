@@ -1,11 +1,13 @@
 fn run = (
-	app = "D:\GitHub\PyMs\PyMs.exe"
-	cmd = ""
-	xxx = DOSCommand (app + cmd)
+	startpath = "D:\\GitHub\\PyMs\\"
+	app = "PyMs.exe"
+	cmd = "assets/VrayZdepthCalculator_RGBA.exr"
+	xxx = app + " " + cmd
 	print xxx
 		
 	str = "pause"
-	hiddendoscommand str startpath:"$max" exitCode:&exitcode
+-- 	hiddendoscommand xxx startpath:startpath exitCode:&exitcode
+	print ((getINISetting (startpath+"PyMs.ini") "VRAY_DEPTH_CALC" "min") as number)
 )
 
 clearlistener()
