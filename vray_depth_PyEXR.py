@@ -4,9 +4,9 @@ import math
 import pyexr
 
 
-def output_min_max(path: str):
+def write_to_file(path: str):
     config = configparser.ConfigParser()
-    config['VRAY_DEPTH_CALC'] = exr_with_alpha(path)
+    config['vray_depth'] = exr_with_alpha(path)
 
     with open("PyMs.ini", "w") as f:
         config.write(f)
@@ -15,7 +15,7 @@ def output_min_max(path: str):
 def exr_with_alpha(path: str):
     exr = pyexr.open(path)
 
-    dist_list = exr.get("B").flatten().astype(float)
+    dist_list = exr.get("PG.VrayDepthCalculator.B").flatten().astype(float)
     alpha_list = exr.get("A", precision=pyexr.UINT).flatten().astype(float)
 
     min_dist = math.inf
