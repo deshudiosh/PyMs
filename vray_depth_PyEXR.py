@@ -4,11 +4,11 @@ import math
 import pyexr
 
 
-def write_to_file(path: str):
+def write_to_file(exr_path: str, result_file_path: str):
     config = configparser.ConfigParser()
-    config['vray_depth'] = exr_with_alpha(path)
+    config['vray_depth'] = exr_with_alpha(exr_path)
 
-    with open("PyMs.ini", "w") as f:
+    with open(result_file_path, "w") as f:
         config.write(f)
 
 
